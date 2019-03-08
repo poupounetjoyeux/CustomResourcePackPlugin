@@ -1,0 +1,26 @@
+main: com.poupounet.plugins.CustomResourcePackPlugin
+name: CustomResourcePackPlugin
+version: 1.13.2.0
+author: PoupounetJoyeux
+description: CustomResourcePackPlugin allow you to put per WorldGuard's regions/World resources packs
+commands:
+  crpversion:
+    description: Show the plugin version
+    usage: /crpversion
+    permission: CustomResourcePackPlugin.version
+    permission-message: You're not allowed to do this.
+  crpglobal:
+      description: Set the global resource pack. If no URI is specified default resources pack will be used.
+      usage: /crpglobal <ResourcepackURI>
+      permission: CustomResourcePackPlugin.global
+      permission-message: You're not allowed to do this.
+  crpworld:
+      description: Set a world custom resource pack. If no URI is specified default resources pack will be used.
+      usage: /crpworld [WorldName] <ResourcepackURI>
+      permission: CustomResourcePackPlugin.world
+      permission-message: You're not allowed to do this.
+  crpregion:
+      description: Set a WorldGuard's region custom resource pack. If no URI is specified default resources pack will be used.
+      usage: /crpregion [WorldGuardRegionId] <ResourcepackURI>
+      permission: CustomResourcePackPlugin.region
+      permission-message: You're not allowed to do this.
