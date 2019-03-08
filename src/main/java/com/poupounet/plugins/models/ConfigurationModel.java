@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public class ConfigurationModel {
 
-    public static final String DefaultResourcesPackUri = "http://";
+    public static final String DefaultResourcesPackUri = "https://github.com/poupounetjoyeux/CustomResourcePackPlugin/releases/download/1.13.2.0/default.zip";
     public static final String DefaultWorldName = "world";
 
     public ConfigurationModel()
