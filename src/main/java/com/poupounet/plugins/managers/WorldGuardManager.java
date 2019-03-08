@@ -83,6 +83,11 @@ public class WorldGuardManager extends BaseManager {
             return;
         }
 
+        if(!this.plugin.isEnabled())
+        {
+            return;
+        }
+
         this.logger.info("The plugin is now enable and listening for WorldGuard regions events!");
         try {
             FlagRegistry registry = WorldGuard.getInstance().getFlagRegistry();
