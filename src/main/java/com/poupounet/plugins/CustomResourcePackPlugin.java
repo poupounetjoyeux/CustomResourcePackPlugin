@@ -20,6 +20,11 @@ public class CustomResourcePackPlugin extends JavaPlugin {
     }
 
     @Override
+    public void onEnable() {
+        Managers.registerEvents();
+    }
+
+    @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         return Managers.getCommandsManager().processCommand(sender, cmd, args);
     }

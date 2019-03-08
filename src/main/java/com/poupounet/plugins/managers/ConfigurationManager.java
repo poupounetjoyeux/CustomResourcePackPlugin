@@ -19,6 +19,11 @@ public class ConfigurationManager extends BaseManager {
         tryLoadConfig();
     }
 
+    @Override
+    public void registerEvents() {
+
+    }
+
     private void tryLoadConfig() {
         this.configurationFile = new File(this.plugin.getDataFolder(), ConfigFileName);
         if(!configurationFile.exists())

@@ -4,7 +4,7 @@ import com.poupounet.plugins.CustomResourcePackPlugin;
 
 import java.util.logging.Logger;
 
-public class BaseManager {
+public abstract class BaseManager {
 
     protected CustomResourcePackPlugin plugin;
     protected Logger logger;
@@ -14,4 +14,6 @@ public class BaseManager {
         this.plugin = plugin;
         this.logger = plugin.getLogger();
     }
+
+    public abstract void registerEvents();
 }

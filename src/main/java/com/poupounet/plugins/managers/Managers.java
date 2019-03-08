@@ -11,10 +11,18 @@ public class Managers {
     public static void initializeManagers(CustomResourcePackPlugin plugin)
     {
         configurationManager = new ConfigurationManager(plugin);
-        //worldGuardManager must be init BEFORE globalWorldManager
         worldGuardManager = new WorldGuardManager(plugin);
         globalWorldManager = new GlobalWorldManager(plugin);
         commandsManager = new CommandsManager(plugin);
+    }
+
+    public static void registerEvents()
+    {
+        configurationManager.registerEvents();
+        //worldGuardManager must be init BEFORE globalWorldManager
+        worldGuardManager.registerEvents();
+        globalWorldManager.registerEvents();
+        commandsManager.registerEvents();
     }
 
     public static WorldGuardManager getWorldGuardManager()

@@ -8,6 +8,10 @@ public class GlobalWorldManager extends BaseManager {
 
     public GlobalWorldManager(CustomResourcePackPlugin plugin) {
         super(plugin);
+    }
+
+    @Override
+    public void registerEvents() {
         if(!Managers.getWorldGuardManager().isEnable())
         {
             plugin.getServer().getPluginManager().registerEvents(new PlayerEventsListener(), plugin);

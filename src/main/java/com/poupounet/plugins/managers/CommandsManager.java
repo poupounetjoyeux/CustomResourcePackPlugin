@@ -14,6 +14,11 @@ public class CommandsManager extends BaseManager {
         super(plugin);
     }
 
+    @Override
+    public void registerEvents() {
+
+    }
+
     public boolean processCommand(CommandSender sender, Command cmd, String[] args)
     {
         if (cmd.getName().equalsIgnoreCase("crpversion")) {

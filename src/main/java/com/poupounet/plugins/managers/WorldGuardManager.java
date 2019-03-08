@@ -28,6 +28,16 @@ public class WorldGuardManager extends BaseManager {
         initializeWorldGuardFlagIfWorldGuardIsPresent();
     }
 
+    @Override
+    public void registerEvents() {
+        if(!this.isEnable)
+        {
+            return;
+        }
+        Listener regionsEventsListener = new WorldGuardRegionsEventsListener(logger);
+        plugin.getServer().getPluginManager().registerEvents(regionsEventsListener, plugin);
+    }
+
     public void setResourcesPackByPlayerAndRegion(ProtectedRegion region, Player player)
     {
         String regionUri = region.getFlag(this.resourcesPackFlag);
@@ -80,8 +90,6 @@ public class WorldGuardManager extends BaseManager {
             {
                 this.resourcesPackFlag = new StringFlag(WorldGuardResourcesPackFlagName, DefaultResourcesPackValue);
                 registry.register(this.resourcesPackFlag);
-                Listener regionsEventsListener = new WorldGuardRegionsEventsListener(logger);
-                plugin.getServer().getPluginManager().registerEvents(regionsEventsListener, plugin);
                 this.isEnable = true;
                 this.logger.info("The flag '" + WorldGuardResourcesPackFlagName + "' was added to WorldGuard!");
             }
