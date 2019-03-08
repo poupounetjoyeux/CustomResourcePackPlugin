@@ -62,7 +62,7 @@ public class ConfigurationManager extends BaseManager {
         try {
             mapper.writeValue(this.configurationFile, newConfig);
         } catch (IOException e) {
-            this.logger.severe("We were not able to save the new configuration..");
+            this.logger.severe("We were not able to save the new configuration.. " + e.getMessage());
             return;
         }
         this.currentConfiguration = newConfig;
